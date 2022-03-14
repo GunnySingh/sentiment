@@ -5,7 +5,7 @@ app = Flask('__name__')
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('Templates/index.html')
 
 @app.route('/recommend',methods=['POST'])
 def recommend_top5():
@@ -14,7 +14,7 @@ def recommend_top5():
     top20_products = model.recommend_product(user_name)
     top5_products = model.Top_Products(top20_products)
     
-    return render_template('index.html',column_names=top5_products.columns.values, row_data=list(top5_products.values.tolist()), zip=zip,text='Recommended products')
+    return render_template('Template/index.html',column_names=top5_products.columns.values, row_data=list(top5_products.values.tolist()), zip=zip,text='Recommended products')
     
 
 if __name__ == '__main__':
