@@ -17,7 +17,7 @@ model_lr=pickle.load(open('lr_Tuned.pkl','rb'))
 recommend_system = pickle.load(open('User_Recommendation_System.pkl','rb'))
 
 
-df = pd.read_csv('Data/sample30.csv')
+df = pd.read_csv('sample30.csv')
 
 
 
