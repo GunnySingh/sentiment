@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<title>Capstone Project </title>
+
+<body>
+  <div class="container">
+    <h1> Sentiment Based Product recommendation System</h1>
+    <div class="row">
+      <div class="col">
+        <form class="row row-cols-lg-auto g-3 align-items-center" method="POST" action="/recommend">
+          <div class="col-12">
+            
+            <div class="input-group">
+              <div class="input-group-text">User Name</div>
+              <input type="text" class="form-control" id="User Name" name="User Name" placeholder="Username"
+              >
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" value="recommend" class="btn btn-primary">Submit</button>
+          </div>
+
+            
+             
+        </form>
+      </div>
+    </div>
+    <br><br>
+    
+    
+    <div class="alert alert-success" role="alert">
+      {{text}}
+    </div>
+    <table class="table table-striped">
+      <tbody>
+        {% for row in row_data %}
+        <tr>
+          {% for col, row_ in zip(column_names, row) %}
+          <td>{{row_}}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
