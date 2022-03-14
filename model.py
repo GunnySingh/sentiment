@@ -12,9 +12,9 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 
-tf_idf=pickle.load(open('Model/TFidf.pkl','rb'))
-model_lr=pickle.load(open('Model/lr_Tuned.pkl','rb'))
-recommend_system = pickle.load(open('Model/User_Recommendation_System.pkl','rb'))
+tf_idf=pickle.load(open('TFidf.pkl','rb'))
+model_lr=pickle.load(open('lr_Tuned.pkl','rb'))
+recommend_system = pickle.load(open('User_Recommendation_System.pkl','rb'))
 
 
 df = pd.read_csv('Data/sample30.csv')
