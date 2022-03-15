@@ -1,3 +1,4 @@
+from flask import message_flashed
 import numpy as np
 import pandas as pd
 import pickle
@@ -14,9 +15,14 @@ def model_predict(doc):
     return output
 
 def recommend_products(user_name):
-    product_list = pd.DataFrame(recommend_system.loc[user_name].sort_values(ascending=False)[0:20])
-    output = df[df.name.isin(product_list.index.tolist())][['name','reviews_text']]
-    output['prediction'] = model_predict(output['reviews_text'])
-    total_products = output.groupby(['name'])['prediction'].mean().sort_values(ascending=False).index[:5]
-    return list(total_products)
-    
+    try :
+
+        product_list = pd.DataFrame(recommend_system.loc[user_name].sort_values(ascending=False)[0:20])
+        output = df[df.name.isin(product_list.index.tolist())][['name','reviews_text']]
+        output['prediction'] = model_predict(output['reviews_text'])
+        total_products = output.groupby(['name'])['prediction'].mean().sort_values(ascending=False).index[:5]
+        return list(total_products)
+    except KeyError:
+        message = ['User Not Found']
+
+        return message
