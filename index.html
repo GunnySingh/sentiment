@@ -33,8 +33,8 @@
       </div>
     </div>
     <br><br>
-    <span style="color:red;">Sample username, please enter one at a time : </span>
-    <kbd>rebecca</kbd> &nbsp; <kbd>joshua</kbd> &nbsp; <kbd>samantha</kbd> &nbsp;<kbd>dorothy w</kbd>
+    <span style="color:red;">Sample usernames: </span>
+    <kbd>mike</kbd> &nbsp; <kbd>darcey</kbd> &nbsp; <kbd>joshua</kbd> &nbsp;<kbd>chris</kbd>
     <br>
     <br>
     <div class="alert alert-success" role="alert">
@@ -44,11 +44,11 @@
       <tbody>
         {% for row in row_data %}
         <tr>
-          {% for col, row_ in zip(column_names, row) %}
-          <td>{{row_}}</td>
+          
+          <td>{{row}}</td>
           {% endfor %}
         </tr>
-        {% endfor %}
+        
       </tbody>
     </table>
   </div>
