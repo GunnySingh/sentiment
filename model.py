@@ -3,14 +3,16 @@ import pandas as pd
 import re
 import pickle
 import nltk
+
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-# nltk.download('punkt')
-# nltk.download('stopwords')
-# nltk.download('wordnet')
-# nltk.download('omw-1.4')
 
 tf_idf=pickle.load(open('Model/TFidf.pkl','rb'))
 model_lr=pickle.load(open('Model/lr_Tuned.pkl','rb'))
