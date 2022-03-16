@@ -3,17 +3,20 @@ import numpy as np
 import pandas as pd
 import pickle
 
+# Importing required pickle files
 
 tf_idf=pickle.load(open('Model/TFidf.pkl','rb'))
 model_lr=pickle.load(open('Model/lr_Tuned.pkl','rb'))
 recommend_system = pickle.load(open('Model/User_Recommendation_System.pkl','rb'))
 df = pickle.load(open('Model/df.pkl','rb'))
 
+# Predicting sentiment as positive or negative
 def model_predict(doc):
     tf_idf_vector = tf_idf.transform(doc)
     output = model_lr.predict(tf_idf_vector)
     return output
 
+# Recommending Top 5 Products
 def recommend_products(user_name):
     try :
 

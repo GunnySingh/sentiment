@@ -18,7 +18,7 @@ def recommend_top5():
     top_products = model.recommend_products(user_name)
     
     return render_template('index.html', row_data=top_products,text='Recommended products')
-    # return render_template('index.html',text = top_products)
+    
 
     
 if __name__ == '__main__':
